@@ -47,9 +47,9 @@ def find_index_for_dates(list_of_dates, target_date) -> int:
     Returns:
         int: The index of the largest date less than or equal to value.
     """
-    list_of_datetimes = [datetime.datetime(this_date.year, this_date.month, this_date.day) for this_date in list_of_dates]
+    list_of_datetimes = [dt.datetime(this_date.year, this_date.month, this_date.day) for this_date in list_of_dates]
     list_of_values = [this_datetime.timestamp()/86400.0 for this_datetime in list_of_datetimes] # number of days since 1970(?)
-    value = datetime.datetime(target_date.year, target_date.month, target_date.day).timestamp()/86400.0
+    value = dt.datetime(target_date.year, target_date.month, target_date.day).timestamp()/86400.0
     target_index = np.max(np.flatnonzero( np.array(list_of_values) < value ))
 
     #target_value = list_of_values[int(target_value)]

@@ -15,7 +15,7 @@ class DummyZeroCurve(ZeroCurve):
         """
         return self.constant_rate
 
-    def get_discount_factor(self, t: float) -> float:
+    def get_discount_factor(self, t: float, comp: str = "continuous") -> float:
         """
         Returns the discount factor based on the constant zero rate.
         """
