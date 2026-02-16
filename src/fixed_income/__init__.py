@@ -8,3 +8,5 @@ Modules:
     calibration  - Curve calibration (CalibrateNelsonSiegelSvensson)
     market_data  - Market data loaders (Bloomberg CSV/Excel)
 """
+
+__version__ = "0.1.0"
