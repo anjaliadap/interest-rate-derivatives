@@ -49,7 +49,7 @@ class FixedRateBond:
         coupon_date=dated_date
 
         while True: 
-            coupon_date=add_months(coupon_date, step)
+            coupon_date=add_months(coupon_date, step, day_convention="None", eom=True)
 
             if coupon_date >= maturity_date:
                 break   

@@ -36,10 +36,10 @@ class NelsonSiegelSvenssonSpline(ZeroCurve):
         return term1 + term2 + term3 + term4
     
     # ---------- Zero Curve interface methods ----------
-    def get_zero_rate(self, t: float) -> float:
+    def get_zero_rate(self, t: float, comp: str = "continuous") -> float:
         return float(self.nelson_siegel_svensson_yield(t, self.params))
-        
-    def get_discount_factor(self, t: float) -> float:
+
+    def get_discount_factor(self, t: float, comp: str = "continuous") -> float:
         r = self.get_zero_rate(t)
         return float(np.exp(-r * t))
 
