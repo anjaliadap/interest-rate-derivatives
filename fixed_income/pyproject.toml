@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fixed_income"
+version = "0.1.0"
+description = "Fixed-income analytics library for U.S. Treasury bonds, yield curves, and Fed Funds futures"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "holidays>=0.40",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "openpyxl>=3.1",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
